@@ -4,6 +4,7 @@ ENV NPM_CONFIG_REGISTRY: https://cli-npm.heroku.com
 ENV LANG: en_US.UTF-8
 ENV LANGUAGE: en_US.UTF-8
 ENV LC_TYPE: en_US.UTF-8
+ENV LC_ALL: C.UTF-8
 
 # Install Ruby
 RUN \
