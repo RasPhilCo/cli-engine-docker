@@ -1,16 +1,9 @@
-FROM node:9
+FROM rasphilco/cli-engine-devcenter:v0.1.1
 
-ENV NPM_CONFIG_REGISTRY: https://cli-npm.heroku.com
-ENV LANG: en_US.UTF-8
-ENV LANGUAGE: en_US.UTF-8
-ENV LC_TYPE: en_US.UTF-8
-ENV LC_ALL: C.UTF-8
-
-# Install Ruby
-RUN \
-  apt-get update && \
-  apt-get install -y ruby ruby-dev less
-
-# Install devcenter
+# Update devcenter
 RUN \
   gem install devcenter --no-ri --no-rdoc
+
+# Remove old gems
+RUN \
+  gem cleanup
